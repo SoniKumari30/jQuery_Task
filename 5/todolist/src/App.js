@@ -1,17 +1,36 @@
 import React from 'react'
-import Todos from './components/Todos'
-import AddTodo from './components/AddTodo'
+import Todos from './Todos'
+import AddTodo from './AddTodo'
+
 
 class App extends React.Component{
+  state={
+       todos:[
+        
 
-      //delete todo
-      delTodo =(title)=>{
-        this.setState({todos:[...this.state.todos.filter(todo=> todo.title !==title)]})
+        ]
       }
-      //add Todo
+      //toggle todo
+      markComplete =(id)=>{
+        this.setState({todos:this.state.todos.map(todo =>{
+          if(todo.id===id){
+            todo.completed=!todo.completed
+          }
+          return todo;
+        })
+      })
+      }
+      
+      delTodo =(id)=>{
+        this.setState({todos:[...this.state.todos.filter(todo=> todo.id !==id)]})
+      }
+    
       addTodo=(title)=>{
+      
           const newTodo={
+            
             title,
+            completed:false
           }
           this.setState({todos: [...this.state.todos, newTodo]});
       }
@@ -19,10 +38,9 @@ class App extends React.Component{
    return (
     <div className="App">
     <div className="container">
-          <Header />
             <div>
                  <AddTodo  addTodo={this.addTodo}/>
-                 <Todos delTodo={this.delTodo}/>
+               <Todos  todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
             </div>
             
          

@@ -20,12 +20,13 @@ class AddTodo extends React.Component{
 				<input type="text"
 				 name="title" 
 				 style={{flex:'10', padding: '5px'}}
-				 placeholder="Add Todo ...."
+				 placeholder="Add your task ...."
 				 value={this.state.title}Change
 				 onChange={this.handleChange}
+				 required
 				 />
 				 <input type="submit"
-				  value="Submit"
+				  value="Add"
 				  className="btn"
 				  style={{flex:"1"}}
 				  />
