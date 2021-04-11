@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-class AddTodo extends React.Component{
+class Add extends React.Component{
 	state={
 		title:''
 	}
@@ -20,13 +20,13 @@ class AddTodo extends React.Component{
 				<input type="text"
 				 name="title" 
 				 style={{flex:'10', padding: '5px'}}
-				 placeholder="Add your task ...."
+				 placeholder="Add Your Task...."
 				 value={this.state.title}Change
 				 onChange={this.handleChange}
 				 required
 				 />
 				 <input type="submit"
-				  value="Add"
+				  value="ADD"
 				  className="btn"
 				  style={{flex:"1"}}
 				  />
@@ -35,4 +35,4 @@ class AddTodo extends React.Component{
 	}
 }
 
-export default AddTodo
+export default Add

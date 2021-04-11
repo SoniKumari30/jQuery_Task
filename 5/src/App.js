@@ -1,16 +1,16 @@
 import React from 'react'
 import Todos from './Todos'
-import AddTodo from './AddTodo'
+import Add from './Add'
+import {v4} from 'uuid'
 
 
 class App extends React.Component{
   state={
        todos:[
-        
-
+            
         ]
       }
-      //toggle todo
+    
       markComplete =(id)=>{
         this.setState({todos:this.state.todos.map(todo =>{
           if(todo.id===id){
@@ -24,11 +24,10 @@ class App extends React.Component{
       delTodo =(id)=>{
         this.setState({todos:[...this.state.todos.filter(todo=> todo.id !==id)]})
       }
-    
-      addTodo=(title)=>{
       
+      addTodo=(title)=>{
           const newTodo={
-            
+            id:v4(),
             title,
             completed:false
           }
@@ -38,8 +37,9 @@ class App extends React.Component{
    return (
     <div className="App">
     <div className="container">
+          
             <div>
-                 <AddTodo  addTodo={this.addTodo}/>
+                 <Add  addTodo={this.addTodo}/>
                <Todos  todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
             </div>
             
@@ -51,4 +51,4 @@ class App extends React.Component{
  
 }
 
-export default App;
+export default App

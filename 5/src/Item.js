@@ -1,7 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React from 'react'
 
-class TodoItem extends React.Component{
+class Item extends React.Component{
   getStyle=()=>{
     return{
         background:'#f4f4f4',
@@ -10,10 +9,6 @@ class TodoItem extends React.Component{
       textDecoration: this.props.todo.completed? 'line-through':'none'
   }
 }
-// markComplete=(e)=>{
-//   e.preventDefault()
-//   console.log(this.props)
-// }
 
 
   render(){
@@ -22,7 +17,7 @@ class TodoItem extends React.Component{
     <div style={this.getStyle()}>
       <p><input type='checkbox'  onChange={this.props.markComplete.bind(this, id)}/>{" "}
       {title}
-      <button onClick={this.props.delTodo.bind(this,id)}>delete</button>
+      <button onClick={this.props.delTodo.bind(this,id)}>DELETE</button>
       </p>
     </div>
     	)
@@ -30,4 +25,4 @@ class TodoItem extends React.Component{
  
 }
 
-export default TodoItem;
+export default Item
