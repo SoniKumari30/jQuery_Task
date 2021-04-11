@@ -1,7 +1,7 @@
 import React from 'react'
 
 class Item extends React.Component{
-  getStyle=()=>{
+  getStyle=()=>{//
     return{
         background:'#f4f4f4',
         padding:'10px',
