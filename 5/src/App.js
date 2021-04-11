@@ -2,7 +2,6 @@ import React from 'react'
 import Todos from './Todos'
 import Add from './Add'
 import {v4} from 'uuid'
-//
 
 class App extends React.Component{
   state={
